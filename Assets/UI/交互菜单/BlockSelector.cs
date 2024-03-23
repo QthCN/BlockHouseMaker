@@ -9,14 +9,10 @@ public class BlockSelector : MonoBehaviour
     private UIDocument document;
     private VisualElement root;
 
-    void Awake()
+    void Start()
     {
         document = this.GetComponent<UIDocument>();
         root = document.rootVisualElement;
-    }
-
-    void Start()
-    {
         var but = root.Q<Button>("CloseButton");
         but.RegisterCallback<ClickEvent>(evt =>
                 {

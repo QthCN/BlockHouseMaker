@@ -12,14 +12,11 @@ public class ShowUIButton : MonoBehaviour
     private UIDocument blockSelectorDocument;
 
 
-    void Awake()
+    void Start()
     {
         document = this.GetComponent<UIDocument>();
         root = document.rootVisualElement;
-    }
 
-    void Start()
-    {
         var but = root.Q<Button>("Menu");
         but.RegisterCallback<ClickEvent>(evt =>
                 {
